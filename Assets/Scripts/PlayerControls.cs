@@ -12,11 +12,6 @@ public class PlayerControls: MonoBehaviour
 
     void Update()
     {
-        random();
-    }
 
-    void random()
-    {
-        Debug.Log("fuck u");
     }
 };
