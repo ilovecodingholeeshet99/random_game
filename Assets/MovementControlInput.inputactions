@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "name": "MovementControlInput",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "dfa2d07d-8b5d-4e18-99da-e7dc1ff610e0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "05692a5a-f6a4-44ad-a913-5773cab74835",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "181f586c-248d-485c-98f8-9cd76991a3c8",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -2,16 +2,27 @@ using UnityEngine;
 
 public class PlayerControls: MonoBehaviour
 {
-    int nigger;
+    [SerializeField] private int speed;
+    private Rigidbody _rb;
+    private Vector3 _movement;
 
     private void Start()
     {
-        nigger = 10;
-        Debug.Log(nigger);
+        _rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        _movement = new Vector3(Input.GetAxis("Horizontal"), 0 ,Input.GetAxis("Vertical")).normalized;
+    }
 
+    void FixedUpdate()
+    {
+        MoveCharacter(_movement);
+    }
+    
+    void MoveCharacter(Vector3 dir)
+    {
+        _rb.linearVelocity = dir * speed;
     }
 };
