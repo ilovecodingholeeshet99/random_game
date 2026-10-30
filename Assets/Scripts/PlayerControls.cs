@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerControls: MonoBehaviour
 {
     [SerializeField] private int speed;
+    [SerializeField] private InputActionReference movementRef;
+
     private Rigidbody _rb;
     private Vector3 _movement;
+
 
     private void Start()
     {
@@ -13,7 +17,7 @@ public class PlayerControls: MonoBehaviour
 
     void Update()
     {
-        _movement = new Vector3(Input.GetAxis("Horizontal"), 0 ,Input.GetAxis("Vertical")).normalized;
+        _movement = movementRef.action.ReadValue<Vector3>();
     }
 
     void FixedUpdate()
@@ -24,5 +28,10 @@ public class PlayerControls: MonoBehaviour
     void MoveCharacter(Vector3 dir)
     {
         _rb.linearVelocity = dir * speed;
+    }   
+
+    public Vector3 GetMovement()
+    {
+        return _movement;
     }
 };
